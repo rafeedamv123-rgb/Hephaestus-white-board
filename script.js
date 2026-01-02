@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-/* ===== CANVAS SIZE ===== */
+
 function resizeCanvas() {
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
@@ -9,7 +9,7 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-/* ===== STATE ===== */
+
 let drawing = false;
 let currentTool = "pen";
 let color = "#000000";
@@ -18,7 +18,7 @@ let startX = 0;
 let startY = 0;
 let snapshot = null;
 
-/* ===== TOOL BUTTONS ===== */
+
 document.querySelectorAll(".toolbar button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentTool = btn.dataset.tool;
@@ -29,7 +29,7 @@ document.querySelectorAll(".toolbar button").forEach(btn => {
   });
 });
 
-/* ===== COLOR & SIZE ===== */
+
 document.getElementById("colorPicker").addEventListener("change", e => {
   color = e.target.value;
 });
@@ -38,7 +38,6 @@ document.getElementById("brushSize").addEventListener("input", e => {
   size = e.target.value;
 });
 
-/* ===== MOUSE DOWN ===== */
 canvas.addEventListener("mousedown", e => {
   drawing = true;
   startX = e.offsetX;
@@ -52,7 +51,7 @@ canvas.addEventListener("mousedown", e => {
   snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 });
 
-/* ===== MOUSE MOVE ===== */
+
 canvas.addEventListener("mousemove", e => {
   if (!drawing) return;
 
@@ -93,12 +92,10 @@ else if (currentTool === "circle") {
   }
 });
 
-/* ===== MOUSE UP ===== */
 canvas.addEventListener("mouseup", () => {
   drawing = false;
 });
 
-/* ===== CLEAR ===== */
 document.getElementById("clearBtn").addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
@@ -134,4 +131,5 @@ document.getElementById("loadBtn").addEventListener("click", () => {
   };
   img.src = data;
 });
+
 
