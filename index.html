@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hephaestus Whiteboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 class="heading">Hephaestus Whiteboard </h1>
+
+<div class="app">
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <input type="color" id="colorPicker">
+    <input type="range" id="brushSize" min="1" max="20" value="5">
+
+    <button data-tool="pen">✏️</button>
+    <button data-tool="eraser">🧽</button>
+    <button data-tool="line">╲</button>
+    <button data-tool="rect">▭</button>
+    <button data-tool="circle">○</button>
+    <button data-tool="text">T</button>
+
+    <button id="undoBtn">↶</button>
+    <button id="redoBtn">↷</button>
+    <button id="clearBtn">🗑️</button>
+    <button id="saveBtn">💾</button>
+    <button id="loadBtn">📂load</button>
+
+
+  </div>
+
+
+
+  <!-- CANVAS -->
+  <canvas id="canvas"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
