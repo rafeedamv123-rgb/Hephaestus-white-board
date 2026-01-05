@@ -122,6 +122,17 @@ document.getElementById("loadBtn").addEventListener("click", function() {
   };
   img.src = data;
 });
+const undo=[];
+canvas.addEventListener("mousedown", function() {
 
-
+undo.push(ctx.getImageData(0, 0, canvas.width, canvas.height));})
+document.getElementById("undoBtn").addEventListener("click", function() {
+ if(undo.length==0)
+  return;
+ 
+else{
+  let previousmove=undo.pop();
+  ctx.putImageData(previousmove,0,0);
+}
+});
 
