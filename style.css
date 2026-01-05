@@ -19,7 +19,7 @@ h1 {
   height: calc(100vh - 60px);
 }
 
-/* ===== TOOLBAR ===== */
+
 .toolbar {
   width: 130px;
   background: url("hello.jpg") center / cover no-repeat;
