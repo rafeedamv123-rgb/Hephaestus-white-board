@@ -20,9 +20,9 @@ let snapshot = null;
 
 
 document.querySelectorAll(".toolbar button").forEach(btn => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", function(){
     currentTool = btn.dataset.tool;
-    console.log("Tool:", currentTool); // DEBUG
+    console.log("Tool:", currentTool); 
 
     if (currentTool === "text") canvas.style.cursor = "text";
     else canvas.style.cursor = "crosshair";
@@ -30,11 +30,11 @@ document.querySelectorAll(".toolbar button").forEach(btn => {
 });
 
 
-document.getElementById("colorPicker").addEventListener("change", e => {
+document.getElementById("colorPicker").addEventListener("change", function(e) {
   color = e.target.value;
 });
 
-document.getElementById("brushSize").addEventListener("input", e => {
+document.getElementById("brushSize").addEventListener("input", function(e) {
   size = e.target.value;
 });
 
@@ -67,7 +67,7 @@ canvas.addEventListener("mousemove", e => {
   }
 
   else if (currentTool === "eraser") {
-    ctx.clearRect(x - size, y - size, size * 2, size * 2);
+    ctx.clearRect(x, y, size*2 , size*2); 
   }
 
   else if (currentTool === "line") {
@@ -96,27 +96,18 @@ canvas.addEventListener("mouseup", () => {
   drawing = false;
 });
 
-document.getElementById("clearBtn").addEventListener("click", () => {
+document.getElementById("clearBtn").addEventListener("click", function() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
-window.addEventListener("load", () => {
-  const data = localStorage.getItem("savedDrawing");
-  if (!data) return;
 
-  const img = new Image();
-  img.onload = () => {
-    ctx.drawImage(img, 0, 0);
-  };
-  img.src = data;
-});
-document.getElementById("saveBtn").addEventListener("click", () => {
+document.getElementById("saveBtn").addEventListener("click", function() {
   const data = canvas.toDataURL("image/png");
   localStorage.setItem("savedDrawing", data);
   alert("Drawing saved. You can continue later!");
 });
 
 
-document.getElementById("loadBtn").addEventListener("click", () => {
+document.getElementById("loadBtn").addEventListener("click", function() {
   const data = localStorage.getItem("savedDrawing");
 
   if (!data) {
@@ -125,11 +116,12 @@ document.getElementById("loadBtn").addEventListener("click", () => {
   }
 
   const img = new Image();
-  img.onload = () => {
+  img.onload = function() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, 0, 0);
   };
   img.src = data;
 });
+
 
 
