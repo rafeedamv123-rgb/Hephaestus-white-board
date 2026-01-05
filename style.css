@@ -1,4 +1,4 @@
-/* ===== BODY ===== */
+
 body {
   margin: 0;
   height: 100vh;
@@ -7,14 +7,13 @@ body {
 
 }
 
-/* ===== TITLE ===== */
 h1 {
-  color: orangered;
+  color: black;
   text-align: center;
   margin: 10px 0;
 }
 
-/* ===== LAYOUT ===== */
+
 .app {
   display: flex;
   height: calc(100vh - 60px);
@@ -35,7 +34,7 @@ h1 {
   align-content: start;
 }
 
-/* ===== TOOL BUTTONS ===== */
+
 .toolbar button,
 .toolbar input[type="color"],
 .toolbar input[type="range"] {
@@ -54,16 +53,17 @@ h1 {
   cursor: pointer;
 }
 
-/* Smaller sliders */
+
 .toolbar input[type="range"] {
   grid-column: span 2;
   height: auto;
 }
 
-/* ===== CANVAS ===== */
+
 #canvas {
   flex: 1;
   background: white;
   border: 3px solid black;
   cursor: crosshair;
 }
+
