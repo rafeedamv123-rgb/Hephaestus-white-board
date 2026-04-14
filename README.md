@@ -1,73 +1,42 @@
-# Hephaestus-white-board
-A simple and interactive paint / whiteboard web application built using HTML, CSS, and JavaScript. It allows users to draw freely on a canvas for sketching, brainstorming, or quick notes.
-Live Demo: https://hephaestus-white-board.vercel.app/
+# Hephaestus Whiteboard
 
-Features
+A simple and interactive paint / whiteboard web application built using HTML, CSS, and JavaScript.<br>
+It allows users to draw freely on a canvas for sketching, brainstorming, or quick notes.
 
+<br>
 
-Freehand drawing on canvas
+## Live Demo
 
+https://hephaestus-white-board.vercel.app/
 
-Color selection
+---
 
+## Features
 
-Adjustable brush size
+- Freehand drawing on canvas<br>
+- Color selection<br>
+- Adjustable brush size<br>
+- Undo and redo functionality<br>
+- Clear/reset canvas<br>
+- Smooth and responsive drawing experience<br>
+- Runs directly in the browser<br>
 
+---
 
-Undo and redo functionality
+## Tech Stack
 
+- HTML<br>
+- CSS<br>
+- JavaScript (Canvas API)<br>
 
-Clear/reset canvas
+---
 
+## Project Structure
+│
+├── index.html
+├── style.css
+└── script.js
 
-Smooth and responsive drawing experience
-
-
-Runs directly in the browser
-
-
-
-Tech Stack
-
-
-HTML
-
-
-CSS
-
-
-JavaScript (Canvas API)
-
-
-
-Project Structure
-hephaestus-whiteboard/│├── index.html├── style.css└── script.js
-
-How It Works
-The application uses the HTML Canvas API to handle drawing.
-
-
-Mouse (or touch) events are used to start, continue, and stop drawing
-
-
-The canvas updates dynamically based on user input
-
-
-A history stack is maintained to support undo and redo functionality
-
-
-
-Getting Started
-
-
-Clone the repository
-git clone https://github.com/your-username/hephaestus-whiteboard.git
-
-
-Open the project folder
-
-
-Open index.html in your browser
 
 
 
